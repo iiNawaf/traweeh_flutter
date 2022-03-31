@@ -113,169 +113,14 @@ class _HomePageState extends State<HomePage> {
 
   Widget _headersRow() {
     return Row(
-      children: [
-        Expanded(
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                color: Color(0xffbc9c64),
-                border: Border.all(color: Colors.white, width: 2)),
-            child: Center(
-              child: LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth > 95) {
-                  return SelectableText(
-                    "اسم المسجد",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white),
-                  );
-                } else {
-                  return SelectableText(
-                    "اسم المسجد",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white, fontSize: 8),
-                  );
-                }
-              },
-            )
-            ),
-          ),
-        ),
-        Expanded(
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                color: Color(0xffbc9c64),
-                border: Border.all(color: Colors.white, width: 2)),
-            child: Center(
-              child: LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth > 95) {
-                  return SelectableText(
-                    "الحي",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white),
-                  );
-                } else {
-                  return SelectableText(
-                    "الحي",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white, fontSize: 8),
-                  );
-                }
-              },
-            )
-            ),
-          ),
-        ),
-        Expanded(
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                color: Color(0xffbc9c64),
-                border: Border.all(color: Colors.white, width: 2)),
-            child: Center(
-              child: LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth > 95) {
-                  return SelectableText(
-                    "اسم الامام",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white),
-                  );
-                } else {
-                  return SelectableText(
-                    "اسم الامام",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white, fontSize: 8),
-                  );
-                }
-              },
-            )
-            ),
-          ),
-        ),
-        Expanded(
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                color: Color(0xffbc9c64),
-                border: Border.all(color: Colors.white, width: 2)),
-            child: Center(
-              child: LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth > 95) {
-                  return SelectableText(
-                    "صوت الامام",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white),
-                  );
-                } else {
-                  return SelectableText(
-                    "صوت الامام",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white, fontSize: 8),
-                  );
-                }
-              },
-            )
-            ),
-          ),
-        ),
-        Expanded(
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                color: Color(0xffbc9c64),
-                border: Border.all(color: Colors.white, width: 2)),
-            child: Center(
-              child: LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth > 95) {
-                  return SelectableText(
-                    "المصليات",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white),
-                  );
-                } else {
-                  return SelectableText(
-                    "المصليات",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white, fontSize: 8),
-                  );
-                }
-              },
-            )
-            ),
-          ),
-        ),
-        Expanded(
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                color: Color(0xffbc9c64),
-                border: Border.all(color: Colors.white, width: 2)),
-            child: Center(
-              child: LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth > 95) {
-                  return SelectableText(
-                    "الموقع",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white),
-                  );
-                } else {
-                  return SelectableText(
-                    "الموقع",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white, fontSize: 8),
-                  );
-                }
-              },
-            )
-            ),
-          ),
-        ),
+      children: const [
+        CustomHeader(text: 'اسم الامام',),
+        CustomHeader(text: 'اسم المسجد',),
+        CustomHeader(text: 'الحي',),
+        CustomHeader(text: 'صوت الامام',),
+        CustomHeader(text: 'المصليات',),
+        CustomHeader(text: 'الموقع',),
+
       ],
     );
   }
@@ -339,6 +184,45 @@ class _HomePageState extends State<HomePage> {
               ),
             );
           }),
+    );
+  }
+}
+
+class CustomHeader extends StatelessWidget {
+  final String text;
+  const CustomHeader({
+    Key? key,required this.text,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    return Expanded(
+      child: Container(
+        padding: EdgeInsets.all(6),
+        decoration: BoxDecoration(
+            color: Color(0xffbc9c64),
+            border: Border.all(color: Colors.white, width: 2)),
+        child: Center(
+          child: LayoutBuilder(
+          builder: (context, constraints) {
+            if (constraints.maxWidth > 95) {
+              return SelectableText(
+                text,
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold, color: Colors.white),
+              );
+            } else {
+              return SelectableText(
+                  text,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, color: Colors.white, fontSize: width >= 1080? 8 :6 ),
+              );
+            }
+          },
+        )
+        ),
+      ),
     );
   }
 }

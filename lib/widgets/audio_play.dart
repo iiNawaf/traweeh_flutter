@@ -13,6 +13,7 @@ class _AudioPlayState extends State<AudioPlay> {
   bool hasPlayed = false;
   bool isPaused = true;
   bool canBeResumed = false;
+  Color color = Colors.green;
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +27,12 @@ class _AudioPlayState extends State<AudioPlay> {
                 setState(() {
                   hasPlayed = true;
                   isPaused = false;
+                  color = Colors.black;
                 });
                 audioPlayer.play(widget.url);
               }           
             },
-            child: Container(child: Icon(Icons.play_arrow, size: 30))
+            child:  Icon(Icons.play_arrow,color: color, size: 30)
           ) : Container(),
 
           hasPlayed ? GestureDetector(
@@ -38,16 +40,18 @@ class _AudioPlayState extends State<AudioPlay> {
               if(canBeResumed){
                 setState(() {
                   canBeResumed = false;
+                  color= Colors.black;
                 });
                 audioPlayer.resume();
               }else{
                 setState(() {
                   canBeResumed = true;
+                  color= Colors.green;
                 });
                 audioPlayer.pause();
               }
             },
-            child: Icon(canBeResumed ? Icons.play_arrow : Icons.pause, size: 30)
+            child: Icon(canBeResumed ? Icons.play_arrow : Icons.pause,color: color, size: 30)
           ) : Container(),
       ],
     );

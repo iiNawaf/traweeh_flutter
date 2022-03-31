@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jeddah_mosques/models/Mosque.dart';
+import 'package:jeddah_mosques/shared/styles.dart';
 import 'package:jeddah_mosques/widgets/audio_play.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -9,6 +10,7 @@ class MosqueInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.only(bottom: 0),
       child: Row(
@@ -22,7 +24,7 @@ class MosqueInfo extends StatelessWidget {
                 border: Border.all(color: Colors.white, width: 2)
               ),
               child: Center(
-                child: SelectableText("${mosque.mosqueName}")
+                child: SelectableText("${mosque.imamName}",style: ktextStyle.copyWith(fontSize: width> 412 ? 14.0:10.0))
                 )
                 ),
           ),
@@ -34,7 +36,7 @@ class MosqueInfo extends StatelessWidget {
                 color: Color(0xfff8ecdc),
                 border: Border.all(color: Colors.white, width: 2)
               ),
-              child: Center(child: SelectableText("${mosque.mosqueDistrict}"))),
+              child: Center(child: SelectableText("${mosque.mosqueName}",style: ktextStyle.copyWith(fontSize: width> 412 ? 14.0:10.0)))),
           ),
           Expanded(
             child: Container(
@@ -44,7 +46,7 @@ class MosqueInfo extends StatelessWidget {
                 color: Color(0xfff8ecdc),
                 border: Border.all(color: Colors.white, width: 2)
               ),
-              child: Center(child: SelectableText("${mosque.imamName}"))),
+              child: Center(child: SelectableText("${mosque.mosqueDistrict}",style: ktextStyle.copyWith(fontSize: width> 412 ? 14.0:10.0),))),
           ),
           Expanded(
             child: Container(
@@ -68,8 +70,8 @@ class MosqueInfo extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('././assets/man.png', height: 30,),
-                  mosque.isWomenAllowed ? Image.asset('././assets/woman.png', height: 30) : Container()
+                  Image.asset('././assets/man.png', height: width > 500? 30 : 20,),
+                  mosque.isWomenAllowed ? Image.asset('././assets/woman.png', height: width > 500? 30 : 20,) : Container()
                 ],
               )
             ),

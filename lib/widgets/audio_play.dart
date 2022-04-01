@@ -24,12 +24,21 @@ class _AudioPlayState extends State<AudioPlay> {
         !hasPlayed ? GestureDetector(
             onTap: () async {
               if(isPaused){
-                setState(() {
+                if(widget.url.contains("https://drive.google.com/uc?export=view&id=1")){
+                  audioPlayer.play(widget.url);
+                  setState(() {
                   hasPlayed = true;
                   isPaused = false;
                   color = Colors.black;
                 });
-                audioPlayer.play(widget.url);
+                }else{
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("عذرا لا يوجد تسجيل متوفر"),
+                    )
+                  );
+                }
+                
               }           
             },
             child:  Icon(Icons.play_arrow,color: color, size: 30)

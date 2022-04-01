@@ -16,6 +16,14 @@ class _AudioPlayState extends State<AudioPlay> {
   Color color = Colors.green;
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    audioPlayer.stop();
+
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,

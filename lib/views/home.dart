@@ -15,6 +15,9 @@ class _HomePageState extends State<HomePage> {
   bool isLoading = false;
   bool isListLoading = false;
   bool isBtnLoading = false;
+  int selectedIndex = -1;
+  String? currentDistrict = "";
+  
   @override
   void didChangeDependencies() {
     if (isInit) {
@@ -25,7 +28,7 @@ class _HomePageState extends State<HomePage> {
       final mosqueProvider = Provider.of<MosuqeProvider>(context);
       final districtProvider = Provider.of<DistrictProvider>(context);
       mosqueProvider.fetchMosques();
-      districtProvider.fetchDistricts();
+      districtProvider.fetchDistricts(context);
       setState(() {
         isLoading = false;
       });
@@ -36,9 +39,6 @@ class _HomePageState extends State<HomePage> {
     }
     super.didChangeDependencies();
   }
-
-  int selectedIndex = -1;
-  String? currentDistrict;
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +109,8 @@ class _HomePageState extends State<HomePage> {
                               padding: const EdgeInsets.all(8.0),
                               child: CircularProgressIndicator(color: Color(0xff182444),),
                             ),) 
-                            : Center(
+                            : currentDistrict == "" 
+                            ? Center(
                               child: Container(
                                 margin: EdgeInsets.all(10),
                                 padding: EdgeInsets.all(5),
@@ -131,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                                   child: Text("تحميل المزيد", style: TextStyle(color: Colors.white),)
                                   ),
                               ),
-                            )
+                            ) : Container()
                   ],
                 ),
               ),

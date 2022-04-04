@@ -1,0 +1,274 @@
+[
+        {
+            "district_id": "0",
+            "district_name": "الصفا"
+        },
+        {
+            "district_id": "1",
+            "district_name": "الروضة"
+        },
+        {
+            "district_id": "2",
+            "district_name": "الخالدية"
+        },
+        {
+            "district_id": "3",
+            "district_name": "المرجان"
+        },
+        {
+            "district_id": "4",
+            "district_name": "المروة"
+        },
+        {
+            "district_id": "5",
+            "district_name": "الفيصلية"
+        },
+        {
+            "district_id": "6",
+            "district_name": "الربوة"
+        },
+        {
+            "district_id": "7",
+            "district_name": "النزهة"
+        },
+        {
+            "district_id": "8",
+            "district_name": "البوادي"
+        },
+        {
+            "district_id": "9",
+            "district_name": "الشاطئ"
+        },
+        {
+            "district_id": "10",
+            "district_name": "الزهراء"
+        },
+        {
+            "district_id": "11",
+            "district_name": "السلامة"
+        },
+        {
+            "district_id": "12",
+            "district_name": "النعيم"
+        },
+        {
+            "district_id": "13",
+            "district_name": "النهضة"
+        },
+        {
+            "district_id": "14",
+            "district_name": "المحمدية"
+        },
+        {
+            "district_id": "15",
+            "district_name": "ابحر"
+        },
+        {
+            "district_id": "16",
+            "district_name": "البساتين"
+        },
+        {
+            "district_id": "17",
+            "district_name": "الحمراء"
+        },
+        {
+            "district_id": "18",
+            "district_name": "الورود"
+        },
+        {
+            "district_id": "19",
+            "district_name": "الروابي"
+        },
+        {
+            "district_id": "20",
+            "district_name": "الصفة"
+        },
+        {
+            "district_id": "21",
+            "district_name": "العمارية"
+        },
+        {
+            "district_id": "22",
+            "district_name": "البلد"
+        },
+        {
+            "district_id": "23",
+            "district_name": "البغدادية"
+        },
+        {
+            "district_id": "24",
+            "district_name": "الجامعة"
+        },
+        {
+            "district_id": "25",
+            "district_name": "الثغر"
+        },
+        {
+            "district_id": "26",
+            "district_name": "السليمانية"
+        },
+        {
+            "district_id": "27",
+            "district_name": "النسيم"
+        },
+        {
+            "district_id": "28",
+            "district_name": "بنيمالك"
+        },
+        {
+            "district_id": "29",
+            "district_name": "الرحاب"
+        },
+        {
+            "district_id": "30",
+            "district_name": "الفيحاء"
+        },
+        {
+            "district_id": "31",
+            "district_name": "النسيم"
+        },
+        {
+            "district_id": "32",
+            "district_name": "البغدادية"
+        },
+        {
+            "district_id": "33",
+            "district_name": "الشرفية"
+        },
+        {
+            "district_id": "34",
+            "district_name": "الرويس"
+        },
+        {
+            "district_id": "35",
+            "district_name": "مشرفة"
+        },
+        {
+            "district_id": "36",
+            "district_name": "العزيزية"
+        },
+        {
+            "district_id": "37",
+            "district_name": "الاندلس"
+        },
+        {
+            "district_id": "38",
+            "district_name": "النخيل"
+        },
+        {
+            "district_id": "39",
+            "district_name": "الامير فواز"
+        },
+        {
+            "district_id": "40",
+            "district_name": "الامير عبدالمجيد النموذجي"
+        },
+        {
+            "district_id": "41",
+            "district_name": "مدائن الفهد"
+        },
+        {
+            "district_id": "42",
+            "district_name": "الواحة"
+        },
+        {
+            "district_id": "43",
+            "district_name": "الحرازات"
+        },
+        {
+            "district_id": "44",
+            "district_name": "بترومين"
+        },
+        {
+            "district_id": "45",
+            "district_name": "الثعالبة"
+        },
+        {
+            "district_id": "46",
+            "district_name": "الهنداوية"
+        },
+        {
+            "district_id": "47",
+            "district_name": "غليل"
+        },
+        {
+            "district_id": "48",
+            "district_name": "القريات"
+        },
+        {
+            "district_id": "49",
+            "district_name": "السبيل"
+        },
+        {
+            "district_id": "50",
+            "district_name": "النزلة اليمانية"
+        },
+        {
+            "district_id": "51",
+            "district_name": "النزلة الشرقية"
+        },
+        {
+            "district_id": "52",
+            "district_name": "المنتزهات"
+        },
+        {
+            "district_id": "53",
+            "district_name": "الاجاويد"
+        },
+        {
+            "district_id": "54",
+            "district_name": "السنابل"
+        },
+        {
+            "district_id": "55",
+            "district_name": "الروابي"
+        },
+        {
+            "district_id": "56",
+            "district_name": "كيلو14"
+        },
+        {
+            "district_id": "57",
+            "district_name": "العدل"
+        },
+        {
+            "district_id": "58",
+            "district_name": "المحجر"
+        },
+        {
+            "district_id": "59",
+            "district_name": "الكندرة"
+        },
+        {
+            "district_id": "60",
+            "district_name": "الوزيرية"
+        },
+        {
+            "district_id": "61",
+            "district_name": "الجوهرة"
+        },
+        {
+            "district_id": "62",
+            "district_name": "الاجواد"
+        },
+        {
+            "district_id": "63",
+            "district_name": "المنار"
+        },
+        {
+            "district_id": "64",
+            "district_name": "الملك فهد"
+        },
+        {
+            "district_id": "65",
+            "district_name": "السامر"
+        },
+        {
+            "district_id": "66",
+            "district_name": "الصالحية"
+        },
+        {
+            "district_id": "67",
+            "district_name": "الفلاح"
+        }
+]

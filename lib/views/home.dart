@@ -14,6 +14,7 @@ class _HomePageState extends State<HomePage> {
   bool isInit = true;
   bool isLoading = false;
   bool isListLoading = false;
+  bool isBtnLoading = false;
   @override
   void didChangeDependencies() {
     if (isInit) {
@@ -72,7 +73,6 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(height: 25),
                     Text(
                       "اختر الحي",
-                      textAlign: TextAlign.start,
                       style:
                           TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
                     ),
@@ -104,6 +104,34 @@ class _HomePageState extends State<HomePage> {
                                       : Container()
                                   : MosqueInfo(mosque: mp.mosquesList[index]);
                             }),
+                            isBtnLoading 
+                            ? Center(child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CircularProgressIndicator(color: Color(0xff182444),),
+                            ),) 
+                            : Center(
+                              child: Container(
+                                margin: EdgeInsets.all(10),
+                                padding: EdgeInsets.all(5),
+                                width: 100,
+                                decoration: BoxDecoration(
+                                  color: Color(0xff182444),
+                                  borderRadius: BorderRadius.circular(5)
+                                ),
+                                child: TextButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      isBtnLoading = true;
+                                    });
+                                    mp.fetchNextMosques(context);
+                                    setState(() {
+                                      isBtnLoading = false;
+                                    });
+                                  },
+                                  child: Text("تحميل المزيد", style: TextStyle(color: Colors.white),)
+                                  ),
+                              ),
+                            )
                   ],
                 ),
               ),

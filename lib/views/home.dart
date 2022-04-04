@@ -4,6 +4,7 @@ import 'package:jeddah_mosques/providers/district_provider.dart';
 import 'package:jeddah_mosques/providers/mosque_provider.dart';
 import 'package:jeddah_mosques/widgets/mosque_info.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -71,7 +72,24 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 25),
-                    Text(
+                    Row(
+                      children: [
+                        const Text(
+                          "للأضافة او التعديل على القائمة, نرجوا التواصل عبر حسابنا في ",
+                          style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                        ),
+                        InkWell(
+                          child: const Text(
+                            "تويتر",style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold,color: Colors.blue),
+                          ),
+                          onTap: ()=> launch("https://mobile.twitter.com/Traweeh_Jed"),
+                        ),
+                      ],
+                    ),
+
+                    const Text(
                       "اختر الحي",
                       style:
                           TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
@@ -105,8 +123,8 @@ class _HomePageState extends State<HomePage> {
                                   : MosqueInfo(mosque: mp.mosquesList[index]);
                             }),
                             isBtnLoading 
-                            ? Center(child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                            ? const Center(child: Padding(
+                              padding: EdgeInsets.all(8.0),
                               child: CircularProgressIndicator(color: Color(0xff182444),),
                             ),) 
                             : currentDistrict == "" 
